@@ -1,0 +1,66 @@
+/* --- File: frontend/src/pages/PricingManagementPage.css --- */
+
+/* LƯU Ý: Phần lớn styling được xử lý bởi Tailwind CSS,
+   Đây là các style bổ sung để tạo hiệu ứng input tùy chỉnh */
+
+.admin-pricing-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* === Custom Card Styles === */
+/* Khối chứa Form Tạo/Sửa & Bảng Danh sách */
+.pricing-form-card,
+.pricing-list-card {
+  border: none;
+  background-color: #3b4f50; /* Nền Xám Xanh Đậm */
+  /* Đổ bóng mạnh mẽ hơn với màu xám */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  border-radius: 1rem; /* Bo góc nổi bật */
+  color: #f7f9fc; /* Chữ màu trắng nhạt trên nền đậm */
+}
+
+/* === Custom Input Styles (Dựa trên mẫu bạn gửi) === */
+.form-input-custom {
+  border: 1px solid #ffffff; /* Viền trắng trên nền đậm */
+  transition: all 0.2s ease-in-out;
+  background-color: #ffffff; /* Đảm bảo input nền trắng */
+  color: #3b4f50; /* Chữ màu đậm trong input */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem; /* Bo góc cho input */
+}
+
+.form-input-custom:hover {
+  border-color: #d6a430; /* Viền Vàng/Đồng khi hover */
+  box-shadow: 0 0 0 2px rgba(214, 164, 48, 0.4);
+}
+
+.form-input-custom:focus {
+  border-color: #d6a430; /* Viền Vàng/Đồng khi focus */
+  box-shadow: 0 0 0 3px rgba(214, 164, 48, 0.6);
+  outline: none;
+}
+
+.form-input-error {
+  border-color: #ef4444 !important; /* Đỏ lỗi */
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* === Bảng (Table) Styles === */
+.table-header {
+  background-color: #d6a430; /* Nền Header Vàng/Đồng */
+  color: #3b4f50; /* Chữ màu đậm trên nền sáng */
+  font-weight: 700;
+}
+.table-row-inactive {
+  background-color: #ffb301; /* Vàng sáng cho hàng inactive */
+  opacity: 0.9;
+}
+
+.text-indigo-600:hover {
+  color: #9333ea; /* Tím đậm hơn */
+  text-decoration: underline;
+}
+ 

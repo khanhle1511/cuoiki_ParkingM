@@ -1,0 +1,116 @@
+/* === Reset cơ bản === */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Ngăn chặn scroll ngang nếu không cần */
+}
+
+.home-page-container * {
+  box-sizing: border-box;
+}
+
+/* === Container chính cho toàn bộ trang === */
+.home-page-container {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo cột */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f8f8f8; /* Nền nhẹ cho toàn trang */
+  font-family: "Inter", sans-serif; /* Hoặc font bạn thích */
+  color: #333;
+  text-align: center;
+}
+
+/* === Tiêu đề chào mừng === */
+.welcome-section {
+  margin-bottom: 2rem;
+}
+
+.welcome-title {
+  font-size: 2.5rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  color: #1a202c; /* Màu chữ đậm */
+  margin-bottom: 0.5rem;
+}
+
+.welcome-subtitle {
+  font-size: 1.125rem; /* text-lg */
+  color: #4a5568; /* Màu chữ xám */
+}
+
+/* === Container cho các lựa chọn phương tiện (3 cột) === */
+.vehicle-selection-grid {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép xuống dòng trên mobile */
+  gap: 1.5rem; /* Khoảng cách giữa các card */
+  width: 100%;
+  max-width: 1200px; /* Giới hạn độ rộng tối đa */
+  justify-content: center;
+  margin-bottom: 2rem; /* Khoảng cách với nút Đăng xuất */
+}
+
+/* === Style cho mỗi card lựa chọn phương tiện === */
+.vehicle-card {
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis: Mỗi card chiếm ít nhất 300px */
+  background-color: #ffffff;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Hiệu ứng hover mượt mà */
+  min-height: 250px; /* Chiều cao tối thiểu cho mỗi card */
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px); /* Nâng lên một chút */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn */
+}
+
+.vehicle-icon {
+  font-size: 3rem; /* Kích thước icon lớn */
+  margin-bottom: 1rem;
+  color: #4f46e5; /* Màu tím cho icon */
+}
+
+.vehicle-name {
+  font-size: 1.5rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #2d3748; /* Màu chữ đậm */
+}
+
+/* === Nút Đăng xuất === */
+.logout-button {
+  background-color: #ef4444; /* Màu đỏ */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #dc2626; /* Đỏ đậm hơn khi hover */
+}
+
+/* === Media Queries cho màn hình lớn hơn === */
+@media (min-width: 768px) {
+  .vehicle-selection-grid {
+    flex-direction: row; /* Chuyển thành hàng ngang trên desktop */
+  }
+  .vehicle-card {
+    flex: 1; /* Mỗi card chiếm đều không gian */
+    max-width: 30%; /* Giới hạn để chúng không quá rộng */
+  }
+}

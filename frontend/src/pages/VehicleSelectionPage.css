@@ -1,0 +1,200 @@
+/* Reset cơ bản */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* === CONTAINER CHÍNH === */
+.selection-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-color:  #3B4F50; /* Nền trắng xám */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* === HIỆU ỨNG NỀN MÀU (RED STRIPE) === */
+.selection-page-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Chiếm một nửa màn hình */
+  height: 100%;
+  background-color: #3B4F50; /* Màu đỏ */
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .selection-page-container::before {
+    width: 100%;
+    height: 25%; /* Chỉ chiếm 1/4 trên cùng */
+  }
+}
+/* ===================================== */
+
+.welcome-section {
+  z-index: 10;
+  margin-bottom: 2.5rem;
+  color: #000000;
+  text-align: center;
+}
+
+/* 🚀 SỬA ĐỔI: Thay đổi màu chữ trên nền đỏ (mobile) */
+@media (max-width: 768px) {
+  .welcome-section {
+    color: #ffffff; /* Đổi thành màu trắng */
+    padding-top: 2rem; /* Thêm padding */
+  }
+  .welcome-title {
+    color: #ffffff;
+  }
+  .welcome-subtitle {
+    color: #f3f4f6; /* Màu trắng xám */
+  }
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* Mặc định là màu tối, sẽ bị override trên mobile */
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-subtitle {
+  font-size: 1.125rem;
+  color: #ffffff7e; /* Mặc định là màu xám đậm */
+}
+
+/* === STACK CARD CONTAINER === */
+.vehicle-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 450px; /* Giới hạn chiều rộng cho card */
+  z-index: 10;
+  margin-bottom: 2rem;
+}
+
+.vehicle-card {
+  background-color: #D6A430;
+  border-radius: 1.5rem; /* Góc bo tròn lớn */
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* 🚀 THÊM MỚI: Đặt z-index mặc định */
+  z-index: 10;
+}
+
+/* === 🚀 SỬA LỖI HOVER === */
+.vehicle-card:hover {
+  transform: translateY(-5px); /* Hiệu ứng nâng lên */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  /* Đảm bảo card được hover luôn ở trên cùng */
+  z-index: 11;
+}
+
+/* Hiệu ứng xếp chồng (overlay effect) */
+.vehicle-card:nth-child(2) {
+  transform: translateY(-1rem);
+  /* 🚀 Đặt z-index thấp hơn */
+  z-index: 9;
+}
+.vehicle-card:nth-child(3) {
+  transform: translateY(-2rem);
+  /* 🚀 Đặt z-index thấp nhất */
+  z-index: 8;
+}
+
+/* Sửa lỗi hover cho các phần tử xếp chồng */
+.vehicle-card:nth-child(2):hover {
+  transform: translateY(-1.3rem); /* Nâng cao hơn 1 chút */
+  z-index: 11;
+}
+.vehicle-card:nth-child(3):hover {
+  transform: translateY(-2.3rem); /* Nâng cao hơn 1 chút */
+  z-index: 11;
+}
+/* ========================= */
+
+.card-icon-wrapper {
+  /* Tạo hình tròn nền cho icon */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  /* Dùng màu nổi bật cho nền icon */
+  background-color: #ffffff;
+  flex-shrink: 0;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  color: #000000; /* Màu đỏ cho icon */
+}
+
+.card-content {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff9f9f1;
+  margin-bottom: 0.25rem;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: #ffffffa4;
+}
+
+/* Icon mũi tên bên phải */
+.arrow-icon {
+  width: 30px;
+  height: 30px;
+  color: #000000;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+/* Style cho nút Đăng xuất */
+.logout-button-container {
+  margin-top: 3rem;
+  z-index: 10;
+}
+
+.logout-button {
+  padding: 0.75rem 2rem;
+  background-color: #0000004f;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #2b2a2a;
+}

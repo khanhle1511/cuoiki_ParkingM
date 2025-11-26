@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tạm thời comment hoặc xóa hết phần @layer base bên dưới đi để fix lỗi crash trước */

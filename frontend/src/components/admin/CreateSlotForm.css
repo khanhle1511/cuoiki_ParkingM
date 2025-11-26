@@ -1,0 +1,113 @@
+/* === 🚀 GIAO DIỆN MỚI CHO FORM TẠO SLOT === */
+
+/* Container chính của Form */
+.create-slot-form-container {
+  /* 🚀 THAY ĐỔI: Đổi nền sang xám nhạt */
+  background-color: #f9fafb; /* bg-gray-50 */
+  padding: 1.5rem; /* 24px */
+  border-radius: 12px; /* bo tròn (lớn hơn) */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem; /* 24px (giữ khoảng cách) */
+  border: 1px solid #e5e7eb; /* viền xám nhạt */
+}
+
+/* Tiêu đề "Tạo Chỗ Đỗ Mới" */
+.create-slot-title {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600; /* semibold */
+  color: #1f2937;
+  margin-bottom: 1rem; /* 16px */
+}
+
+/* Form layout (sắp xếp theo chiều ngang) */
+.create-slot-form {
+  display: flex;
+  flex-wrap: wrap; /* Tự động xuống hàng trên mobile */
+  gap: 1rem; /* 16px (khoảng cách giữa các mục) */
+  align-items: flex-end; /* Căn chỉnh các mục theo đáy */
+}
+
+/* Mỗi nhóm (Loại Xe) */
+/* 🚀 THAY ĐỔI: Tăng độ rộng của Loại Xe */
+.form-group {
+  flex: 2; /* Gấp đôi các mục khác */
+  min-width: 200px; /* Chiều rộng tối thiểu */
+}
+
+/* Style cho nhóm Ghi chú (full-width) */
+.form-group-full {
+  flex-basis: 100%; /* Chiếm toàn bộ chiều rộng */
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500; /* medium */
+  color: #374151;
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+/* Ô nhập liệu và ô chọn */
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem; /* 12px 16px */
+  border: 1px solid #d1d5db;
+  border-radius: 8px; /* bo tròn */
+  font-size: 0.875rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  /* Hiệu ứng "Nổi" */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Style riêng cho textarea */
+.form-textarea {
+  resize: vertical; /* Cho phép kéo dọc */
+  min-height: 60px;
+  font-family: inherit; /* Đảm bảo font giống input */
+}
+
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4f46e5; /* Màu tím */
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Container cho nút bấm (để căn lề) */
+.form-button-container {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Nút "Tạo mới" */
+.form-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #4f46e5; /* Màu tím */
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.form-button:hover {
+  background-color: #4338ca;
+}
+.form-button:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* Thông báo lỗi */
+.form-error {
+  color: #dc2626; /* Màu đỏ */
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  flex-basis: 100%;
+}
